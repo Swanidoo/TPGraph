@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>161</y>
+      <w>1001</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>package
+--
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>294</y>
+      <w>112</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Edge
+--
+- id : int
+- color : String
+- ends : Vertex[2]
+- value : double
+--
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>280</y>
+      <w>238</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Graph
+--
++ nbOfVertices() : int
++ nbOfEdges() : int
++ addVertex(v : Vertex) : void
++ addEdge(v1 : Vertex, v2 : Vertex) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdges(v1 : Vertex, v2 : Vertex) : Edge[]
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>280</y>
+      <w>238</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>Concrete Graph
+--
++ isDirected : boolean
+--
++ nbOfVertices() : int
++ nbOfEdges() : int
++ addVertex(v : Vertex) : void
++ addEdge(v1 : Vertex, v2 : Vertex) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdges(v1 : Vertex, v2 : Vertex) : Edge[]
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]
++ createEdge(v1 : Vertex, v2 :  Vertex) : Edge</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>98</x>
+      <y>350</y>
+      <w>119</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Directed Edge
+--
+- source : int
+--
++ getSource() : Vertex
++ getSink() : Vertex</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>105</x>
+      <y>273</y>
+      <w>112</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Undirected Edge
+--
++ getEnds() : Vertex[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>441</y>
+      <w>105</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Vertex
+--
+- id : int
+- info : Object
+- color : String
+--
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>350</y>
+      <w>84</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>287</y>
+      <w>84</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>336</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>343</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>378</y>
+      <w>21</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>210</y>
+      <w>84</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>182</y>
+      <w>140</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>My Test
+--
+- main(args : String[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>420</x>
+      <y>448</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>No need to link Concrete Graph
+and Vertex directly because it
+is already included in Abstract
+class Edge
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

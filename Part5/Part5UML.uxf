@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>156</x>
+      <y>18</y>
+      <w>840</w>
+      <h>534</h>
+    </coordinates>
+    <panel_attributes>Graph
+--
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>186</y>
+      <w>96</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Edge
+--
+- id : int
+- color : String
+- ends : Vertex[2]
+- value : double
+--
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>774</x>
+      <y>102</y>
+      <w>204</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Graph
+--
++ nbOfVertices() : int
++ nbOfEdges() : int
++ addVertex(v : Vertex) : void
++ addEdge(v1 : Vertex, v2 : Vertex) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdges(v1 : Vertex, v2 : Vertex) : Edge[]
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>486</x>
+      <y>42</y>
+      <w>210</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Concrete Graph
+--
++ nbOfVertices() : int
++ nbOfEdges() : int
++ addVertex(v : Vertex) : void
++ addEdge(v1 : Vertex, v2 : Vertex) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdges(v1 : Vertex, v2 : Vertex) : Edge[]
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>228</y>
+      <w>102</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Directed Edge
+--
+- source : int
+--
++ getSource() : Vertex
++ getSink() : Vertex</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>186</y>
+      <w>96</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Undirected Edge
+--
++ getEnds() : Vertex[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>318</x>
+      <y>312</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Vertex
+--
+- id : int
+- info : Object
+- color : String
+--
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>234</y>
+      <w>54</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>198</y>
+      <w>60</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>150</y>
+      <w>96</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>108</y>
+      <w>96</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>140.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>258</y>
+      <w>24</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>20.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>426</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>282</y>
+      <w>204</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Undirected Graph
+--
++ nbOfVertices() : int
++ addVertex(v : Vertex) : void
++ addEdge(e : Edge) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdge(v1 : Vertex, v2 : Vertex) : Edge
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>834</x>
+      <y>222</y>
+      <w>48</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>288</y>
+      <w>222</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Incidence Graph Array
+--
+- maxVertices : int
++ IncidenceArrayGraph(maxNbOfVertices : int)
+- firstEmptyPlace(edges : Edge[]) : int
+- alreadyConsidered(e : Edge, list : Edge[]) : boolean
+--
++ nbOfVertices() : int
++ addVertex(v : Vertex) : void
++ addEdge(e : Edge) : void
++ isConnected(v1 : Vertex, v2 : Vertex) : boolean
++ isConnected() : boolean
++ getEdge(v1 : Vertex, v2 : Vertex) : Edge
++ getEdges() : Edge[]
++ getVertices() : Vertex[]
++ getNeighborEdges(v : Vertex) : Edge[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>336</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>240</y>
+      <w>78</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>110.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>492</x>
+      <y>504</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>TestGraphImpl
+--
++ TestGraphImpl()
++ main(args : String[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>624</y>
+      <w>282</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>Maze
+--
+- cells: CellDescription []
+- links() : Edge[]- departure: CellDescription
+- departure: CellDescription
+- arrival: CellDescription
+- celltoVertexMap: Map&lt;CellDescription, Vertex&gt;
+--
++ Maze(size: int, density: double, dangerousness:
+  double) throws GraphException
++ getDeparture(): CellDescription                               
++ getArrival(): CellDescription
++ getGraph(): IncidenceArrayGraph
++ findPath(current: CellDescription, target: CellDescription,
+  path: Vertex[], graph: IncidenceArrayGraph): boolean
++ findOptimalPath(current: CellDescription, target: CellDescription,
+  path: Vertex[], graph: IncidenceArrayGraph, monsters: int,
+  minMonsters: int[], bestPath: Vertex[]): boolean
++ toString(): String
+- getCellByVertex(vertex: Vertex): CellDescription</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>642</y>
+      <w>120</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Cell Description
+--
+- width: int
+- length: int
+- containsMonster: boolean
+- nbPerson: int
+- visited: boolean
+--
++ toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>822</x>
+      <y>738</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Game
+--
++ main(String[] args): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>450</x>
+      <y>600</y>
+      <w>546</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>MazeGame
+--
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>678</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>744</y>
+      <w>90</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>546</y>
+      <w>24</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>12.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
