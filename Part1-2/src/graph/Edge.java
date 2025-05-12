@@ -24,6 +24,9 @@ public abstract class Edge {
      * @param v2 the second vertex
      */
     public Edge(Vertex v1, Vertex v2) {
+        if (v1 == null || v2 == null) {
+            throw new IllegalArgumentException("Vertices cannot be null."); // Added exception handling
+        }
         this.id = nbEdges++;
         this.color = Color.RED; // Default color
         this.ends = new Vertex[] {v1, v2};

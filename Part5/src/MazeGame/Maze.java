@@ -16,6 +16,16 @@ public class Maze {
 
     // Constructor
     public Maze(int size, double density, double dangerousness) throws GraphException {
+        // Parameter validation
+        if (size <= 0) {
+            throw new IllegalArgumentException("Maze size must be positive.");
+        }
+        if (density < 0 || density > 1) {
+            throw new IllegalArgumentException("Density must be between 0 and 1.");
+        }
+        if (dangerousness < 0 || dangerousness > 1) {
+            throw new IllegalArgumentException("Dangerousness must be between 0 and 1.");
+        }
         // Initialize the graph
         graph = new IncidenceArrayGraph(size); // Updated to assign the graph to the field
 

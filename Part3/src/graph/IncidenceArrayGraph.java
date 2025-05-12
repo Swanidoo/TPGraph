@@ -53,6 +53,9 @@ public class IncidenceArrayGraph implements UndirectedGraph {
     }
 
     public void addVertex(Vertex v) throws GraphOverflowException {
+        if (v == null) {
+            throw new IllegalArgumentException("Cannot add a null vertex to the graph.");
+        }
         if ((v.getId() < 0) || (v.getId() >= this.maxVertices)) {
             throw new GraphOverflowException("Graph is full");
         }
@@ -68,8 +71,25 @@ public class IncidenceArrayGraph implements UndirectedGraph {
     }
 
     public void addEdge(Edge e) throws GraphException, GraphOverflowException {
-        int idFirstVertex = e.getEnds()[0].getId();
-        int idSecondVertex = e.getEnds()[1].getId();
+        // Parameter validation
+        if (e == null) {
+            throw new IllegalArgumentException("Cannot add a null edge to the graph.");
+        }
+        
+        // Validate the edge endpoints
+        Vertex[] ends = e.getEnds();
+        if (ends[0] == null || ends[1] == null) {
+            throw new GraphException("Edge endpoints cannot be null.");
+        }
+        
+        int idFirstVertex = ends[0].getId();
+        int idSecondVertex = ends[1].getId();
+        
+        // Verify that the vertices exist in the graph
+        if (this.vertices[idFirstVertex] == null || this.vertices[idSecondVertex] == null) {
+            throw new GraphException("One or both vertices are not in the graph.");
+        }
+        
         int p1 = this.firstEmptyPlace(this.edges[idFirstVertex]);
         if (p1 == -1) throw new GraphOverflowException("Graph is full");
         this.edges[idFirstVertex][p1] = e;

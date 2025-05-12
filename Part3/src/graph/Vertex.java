@@ -23,6 +23,12 @@ public class Vertex {
      * @param color the color of the vertex
      */
     public Vertex(Object info, Color color) {
+        if (info == null) {
+            throw new IllegalArgumentException("Vertex info cannot be null.");      //Added exception handling
+        }
+        if (color == null) {
+            throw new IllegalArgumentException("Vertex color cannot be null.");
+        }
         this.id = nbVertices++;
         this.info = info;
         this.color = color;
