@@ -132,15 +132,22 @@ public class IncidenceArrayGraph implements UndirectedGraph {
         return neighbors.toArray(new Edge[0]);
     }
 
-    public Edge getEdge(Vertex v1, Vertex v2) throws GraphException {
+    public Edge getEdge(Vertex v1, Vertex v2) throws GraphException, GraphStructureException {
+        // Vérify that the vertices exist in the graph
+        if (v1 == null || v2 == null) {
+            throw new IllegalArgumentException("Vertices cannot be null.");
+        }
+        
         int i1 = v1.getId();
         for (Edge e : this.edges[i1]) {
-            Vertex[] extremities = e.getEnds();
-            if ((extremities[0] == v2) || (extremities[1] == v2)) {
-                return e;
+            if (e != null) {
+                Vertex[] extremities = e.getEnds();
+                if ((extremities[0] == v2) || (extremities[1] == v2)) {
+                    return e;
+                }
             }
         }
-        return null;
+        throw new GraphStructureException("No edge found between vertices " + v1.getId() + " and " + v2.getId());
     }
 
     public boolean isConnected(Vertex v1, Vertex v2) throws GraphException {

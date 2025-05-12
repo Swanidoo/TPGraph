@@ -36,8 +36,7 @@ public interface UndirectedGraph {
      * @return the edge connecting the vertices
      * @throws GraphException if the edge does not exist
      */
-    public Edge getEdge(Vertex v1, Vertex v2) throws GraphException;
-
+    public Edge getEdge(Vertex v1, Vertex v2) throws GraphException, GraphStructureException;
     /**
      * Gets all vertices in the graph.
      *
