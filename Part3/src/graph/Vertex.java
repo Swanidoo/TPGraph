@@ -1,9 +1,13 @@
 package graph;
 
+import java.io.Serializable;
+
 /**
  * Represents a vertex in the graph.
  */
-public class Vertex {
+public class Vertex implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
     /** Static counter to assign unique IDs to vertices. */
     static private int nbVertices = 0;
 
@@ -24,7 +28,7 @@ public class Vertex {
      */
     public Vertex(Object info, Color color) {
         if (info == null) {
-            throw new IllegalArgumentException("Vertex info cannot be null.");      //Added exception handling
+            throw new IllegalArgumentException("Vertex info cannot be null.");
         }
         if (color == null) {
             throw new IllegalArgumentException("Vertex color cannot be null.");

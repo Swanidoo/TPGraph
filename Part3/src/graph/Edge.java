@@ -1,9 +1,12 @@
 package graph;
 
+import java.io.Serializable;
+
 /**
  * Represents an edge in the graph.
  */
-public abstract class Edge {
+public abstract class Edge implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /** Static counter to assign unique IDs to edges. */
     static private int nbEdges = 0;
@@ -25,7 +28,7 @@ public abstract class Edge {
      */
     public Edge(Vertex v1, Vertex v2) {
         if (v1 == null || v2 == null) {
-            throw new IllegalArgumentException("Vertices cannot be null."); // Added exception handling
+            throw new IllegalArgumentException("Vertices cannot be null.");
         }
         this.id = nbEdges++;
         this.color = Color.RED; // Default color

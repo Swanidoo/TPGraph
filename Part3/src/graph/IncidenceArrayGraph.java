@@ -1,5 +1,6 @@
 package graph;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -10,7 +11,8 @@ import java.util.Set;
 /**
  * Represents a graph using an incidence array.
  */
-public class IncidenceArrayGraph implements UndirectedGraph {
+public class IncidenceArrayGraph implements UndirectedGraph, Serializable {
+    private static final long serialVersionUID = 1L;
 
     /** Array of vertices in the graph. */
     private Vertex[] vertices;
@@ -133,7 +135,7 @@ public class IncidenceArrayGraph implements UndirectedGraph {
     }
 
     public Edge getEdge(Vertex v1, Vertex v2) throws GraphException, GraphStructureException {
-        // Vérify that the vertices exist in the graph
+        // Verify that the vertices exist in the graph
         if (v1 == null || v2 == null) {
             throw new IllegalArgumentException("Vertices cannot be null.");
         }
@@ -176,5 +178,34 @@ public class IncidenceArrayGraph implements UndirectedGraph {
         }
 
         return false; // No path found
+    }
+
+    /**
+     * Serializes the graph to a file.
+     *
+     * @param filename the name of the file to write to
+     * @throws IOException if an I/O error occurs
+     */
+    public void serialize(String filename) throws IOException {
+        try (FileOutputStream fos = new FileOutputStream(filename);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(this);
+        }
+    }
+
+    /**
+     * Deserializes a graph from a file.
+     *
+     * @param filename the name of the file to read from
+     * @return the deserialized IncidenceArrayGraph
+     * @throws IOException if an I/O error occurs
+     * @throws ClassNotFoundException if the class cannot be found during deserialization
+     */
+    public static IncidenceArrayGraph deserialize(String filename) 
+            throws IOException, ClassNotFoundException {
+        try (FileInputStream fis = new FileInputStream(filename);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            return (IncidenceArrayGraph) ois.readObject();
+        }
     }
 }
