@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class IncidenceArrayGraphTest {
     
-    private static final int MAX_VERTICES = 5;
+    private static final int MAX_VERTICES = 100;
     private IncidenceArrayGraph graph;
     private Vertex v1, v2, v3;
     
@@ -113,13 +113,19 @@ public class IncidenceArrayGraphTest {
     
     @Test(expected = GraphOverflowException.class)
     public void testGraphOverflow() {
-        // Given
+        // Petite capacité
         IncidenceArrayGraph smallGraph = new IncidenceArrayGraph(2);
-        smallGraph.addVertex(v1);
-        smallGraph.addVertex(v2);
         
-        // When
-        smallGraph.addVertex(v3); // Should throw GraphOverflowException
+        // Nouveaux sommets spécifiquement pour ce test
+        Vertex testV1 = new Vertex("Test1", Color.RED);
+        Vertex testV2 = new Vertex("Test2", Color.BLUE);
+        Vertex testV3 = new Vertex("Test3", Color.RED);
+        
+        smallGraph.addVertex(testV1);
+        smallGraph.addVertex(testV2);
+        
+        // Ceci devrait provoquer l'exception
+        smallGraph.addVertex(testV3);
     }
     
     @Test
